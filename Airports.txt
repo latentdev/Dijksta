@@ -1,0 +1,7 @@
+ATL-Atlanta,Georgia
+LAX-Los Angeles,California
+JFK-Queens,New York;ATL-Atlanta,Georgia:59:760 
+DFW-Dallas,Texas;LAX-Los Angeles,California:49:1235;ATL-Atlanta,Georgia:44:732
+PDX-Portland,Oregon;LAX-Los Angeles,California:94:833;DFW-Dallas,Texas:99:1615;DEN-Denver,Colorado:39:991;ATL-Atlanta,Georgia:511:2172;ORD-Chicago,Illinois:121:1739;JFK-Queens,New York:362:2453
+DEN-Denver,Colorado;LAX-Los Angeles,California:36:861;DFW-Dallas,Texas:29:641;ATL-Atlanta,Georgia:59:1199;JFK-Queens,New York:212:1626;ORD-Chicago,Illinois:44:888
+ORD-Chicago,Illinois;JFK-Queens,New York:44:740;ATL-Atlanta,Georgia:29:606

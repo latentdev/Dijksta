@@ -7,13 +7,42 @@
 #include "airport.h"
 using namespace std;
 
+/******************************************************
+*   Purpose:  default constructor
+
+*         Entry:  none
+
+*         Exit: allocates memory to airports
+*******************************************************/
+
 Reader::Reader()
 {
+	airports = new vector<airport*>();
 }
+
+/******************************************************
+*   Purpose:  default constructor
+
+*         Entry:  none
+
+*         Exit: deletes airports
+*******************************************************/
+
+Reader::~Reader()
+{
+	delete airports;
+}
+
+/******************************************************
+*   Purpose:  read and parse a file
+
+*         Entry:  passed in a string corresponding to a file name
+
+*         Exit: reads in a file parsing line by line into a vector then parses the vector of strings even further
+*******************************************************/
 
 void Reader::ReadFile(string x)
 {
-	airports = new vector<airport*>();
 	ifstream infile(x);
 	while (infile)
 	{
@@ -38,6 +67,14 @@ void Reader::ReadFile(string x)
 
 }
 
+/******************************************************
+*   Purpose:  factory for building an airport
+
+*         Entry:  passed in a vector of strings
+
+*         Exit: creates a new airport and fills out its members
+*******************************************************/
+
 airport* Reader::BuildAirport(vector<string> source)
 {
 	airport * temp = new airport;
@@ -55,6 +92,14 @@ airport* Reader::BuildAirport(vector<string> source)
 	return temp;
 }
 
+/******************************************************
+*   Purpose:  factory for a connection
+
+*         Entry:  passed in a string
+
+*         Exit: creates a new connection and builds it out by parsing the passed in string.
+*******************************************************/
+
 connection* Reader::ParseConnection(string s)
 {
 	istringstream ss(s);
@@ -71,6 +116,14 @@ connection* Reader::ParseConnection(string s)
 	x->distance = stoi(record[2]);
 	return x;
 }
+
+/******************************************************
+*   Purpose:  getter for airports
+
+*         Entry:  none
+
+*         Exit: returns airports
+*******************************************************/
 
 vector<airport*> Reader::getAirports()
 {
